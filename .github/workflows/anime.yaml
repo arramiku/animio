@@ -16,6 +16,10 @@ jobs:
       - name: Install Package
         run: sudo apt-get install -y transmission-cli
 
+      - name: Get Data
+        run: |
+          echo "Magnet: ${{ github.event.inputs.magnet }}" 
+
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
