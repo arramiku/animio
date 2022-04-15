@@ -1,0 +1,16 @@
+name: Anime Video
+
+on:
+  workflow_dispatch:
+    inputs:
+      magnet:
+        description: 'Magnet'     
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Log level: ${{ github.event.inputs.logLevel }}"
+          echo "Tags: ${{ github.event.inputs.tags }}" 
