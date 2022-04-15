@@ -1,7 +1,6 @@
-name: Anime Video
-
+name: CI
 on:
-  workflow_dispatch:
+  # workflow_dispatch:
     inputs:
       magnet:
         description: 'Magnet'     
@@ -11,6 +10,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "Log level: ${{ github.event.inputs.logLevel }}"
-          echo "Tags: ${{ github.event.inputs.tags }}" 
+      # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
