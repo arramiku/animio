@@ -17,8 +17,7 @@ jobs:
         run: sudo apt-get install -y transmission-cli
 
       - name: Get Data
-        run: |
-          echo "Magnet: ${{ github.event.inputs.magnet }}" 
+        run: transmission-cli ${{ github.event.inputs.magnet }} -w ~/animio
 
       - name: Run a multi-line script
         run: |
